@@ -230,6 +230,12 @@ vim.opt.foldmethod = 'indent'
 vim.opt.foldenable = false
 vim.opt.foldlevel = 99
 
+-- insert new line without entering insert mode
+vim.keymap.set('n', '<CR>', 'm`o<Esc>``')
+vim.keymap.set('n', '<S-CR>', 'm`O<Esc>``')
+
+-- insertion site / insertionsite
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
