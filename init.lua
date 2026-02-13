@@ -239,6 +239,13 @@ vim.opt.foldlevel = 99
 vim.keymap.set('n', '<CR>', 'm`o<Esc>``')
 vim.keymap.set('n', '<S-CR>', 'm`O<Esc>``')
 
+-- copy current file's relative path into clipboard
+vim.api.nvim_create_user_command('Cppath', function()
+  local path = vim.fn.expand '%:p'
+  vim.fn.setreg('+', path)
+  vim.notify('Copied "' .. path .. '" to the clipboard!')
+end, {})
+
 -- insertion site / insertionsite
 
 -- [[ Install `lazy.nvim` plugin manager ]]
