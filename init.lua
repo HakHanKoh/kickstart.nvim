@@ -242,6 +242,13 @@ vim.keymap.set('n', '<S-CR>', 'm`O<Esc>``')
 
 -- copy current file's relative path into clipboard
 vim.api.nvim_create_user_command('Cppath', function()
+  local path = vim.fn.expand '%'
+  vim.fn.setreg('+', path)
+  vim.notify('Copied "' .. path .. '" to the clipboard!')
+end, {})
+
+-- copy current file's full path into clipboard
+vim.api.nvim_create_user_command('Cpfullpath', function()
   local path = vim.fn.expand '%:p'
   vim.fn.setreg('+', path)
   vim.notify('Copied "' .. path .. '" to the clipboard!')
