@@ -122,6 +122,7 @@ vim.g.clipboard = 'xclip'
 -- copy to system clipboard
 vim.keymap.set('n', '<leader>c', '"+y')
 vim.keymap.set('n', '<leader>cc', '"+yy')
+vim.keymap.set({ 'n', 'x' }, '<leader>p', [["+p]], { desc = 'Paste from system clipboard' })
 
 -- Enable break indent
 vim.o.breakindent = true
