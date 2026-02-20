@@ -261,6 +261,10 @@ vim.api.nvim_create_user_command('Cpfullpath', function()
   vim.notify('Copied "' .. path .. '" to the clipboard!')
 end, {})
 
+-- leader keymaps
+vim.keymap.set('n', '<leader>tn', '<cmd>tabnew<CR>', { desc = '[n]ew tab' })
+vim.keymap.set('n', '<leader>tt', '<cmd>terminal<CR>', { desc = '[t]erminal' })
+
 -- insertion site / insertionsite
 
 -- [[ Install `lazy.nvim` plugin manager ]]
@@ -389,7 +393,7 @@ require('lazy').setup({
       -- Document existing key chains
       spec = {
         { '<leader>s', group = '[S]earch' },
-        { '<leader>t', group = '[T]oggle' },
+        { '<leader>t', group = '[T]oggle/tabs' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },
