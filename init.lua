@@ -210,6 +210,13 @@ vim.keymap.set('t', '<C-h>', '<C-\\><C-n><C-w><C-h>', { desc = 'Move focus to th
 vim.keymap.set('t', '<C-l>', '<C-\\><C-n><C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('t', '<C-j>', '<C-\\><C-n><C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('t', '<C-k>', '<C-\\><C-n><C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- make tab switching works in terminal mode
+vim.keymap.set('t', '<C-PageUp>', '<C-\\><C-n><C-PageUp>', { desc = 'Switch to next tab' })
+vim.keymap.set('t', '<C-PageDown>', '<C-\\><C-n><C-PageDown>', { desc = 'Switch to previos tab' })
+
+-- insertion site 2
+
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
 -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
 -- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
