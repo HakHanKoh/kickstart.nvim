@@ -265,6 +265,10 @@ end, {})
 vim.keymap.set('n', '<leader>tn', '<cmd>tabnew<CR>', { desc = '[n]ew tab' })
 vim.keymap.set('n', '<leader>tt', '<cmd>terminal<CR>', { desc = '[t]erminal' })
 
+-- CTRL-s to save file
+vim.keymap.set('i', '<C-s>', '<C-\\><C-n>:w<CR>', { desc = 'Save file' })
+vim.keymap.set('n', '<C-s>', '<cmd>w<CR>', { desc = 'Save file' })
+
 -- insertion site / insertionsite
 
 -- [[ Install `lazy.nvim` plugin manager ]]
