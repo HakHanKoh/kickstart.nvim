@@ -263,7 +263,7 @@ end, {})
 
 -- leader keymaps
 vim.keymap.set('n', '<leader>tn', '<cmd>tabnew<CR>', { desc = '[n]ew tab' })
-vim.keymap.set('n', '<leader>tt', '<cmd>terminal<CR>', { desc = '[t]erminal' })
+vim.keymap.set('n', '<leader>tt', '<cmd>terminal<CR>i', { desc = '[t]erminal' })
 
 -- CTRL-s to save file
 vim.keymap.set('i', '<C-s>', '<C-\\><C-n>:w<CR>', { desc = 'Save file' })
