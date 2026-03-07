@@ -261,9 +261,17 @@ vim.api.nvim_create_user_command('Cpfullpath', function()
   vim.notify('Copied "' .. path .. '" to the clipboard!')
 end, {})
 
+-- Git add
+vim.api.nvim_create_user_command('GitAdd', function()
+  local path = vim.fn.expand '%'
+  vim.fn.system { 'git', 'add', path }
+  vim.notify('Added "' .. path .. '" to staging')
+end, {})
+
 -- leader keymaps
 vim.keymap.set('n', '<leader>tn', '<cmd>tabnew<CR>', { desc = '[n]ew tab' })
 vim.keymap.set('n', '<leader>tt', '<cmd>terminal<CR>i', { desc = '[t]erminal' })
+vim.keymap.set('n', '<leader>ga', '<cmd>GitAdd<CR>', { desc = 'Add file to git staging' })
 
 -- CTRL-s to save file
 vim.keymap.set('i', '<C-s>', '<C-\\><C-n>:w<CR>', { desc = 'Save file' })
@@ -398,6 +406,7 @@ require('lazy').setup({
       spec = {
         { '<leader>s', group = '[S]earch' },
         { '<leader>t', group = '[T]oggle/tabs' },
+        { '<leader>g', group = 'Git' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },
