@@ -120,8 +120,8 @@ vim.g.clipboard = 'xclip'
 -- end)
 
 -- copy to system clipboard
-vim.keymap.set('n', '<leader>c', '"+y')
-vim.keymap.set('n', '<leader>cc', '"+yy')
+vim.keymap.set('v', '<leader>c', '"+y', { desc = 'Copy to system clipboard' })
+vim.keymap.set('n', '<leader>cc', '"+yy', { desc = 'Copy line to system clipboard' })
 vim.keymap.set({ 'n', 'x' }, '<leader>p', [["+p]], { desc = 'Paste from system clipboard' })
 
 -- Enable break indent
@@ -411,6 +411,7 @@ require('lazy').setup({
         { '<leader>s', group = '[S]earch' },
         { '<leader>t', group = '[T]oggle/tabs' },
         { '<leader>g', group = 'Git' },
+        { '<leader>c', group = 'Copy to system clipboard' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },
