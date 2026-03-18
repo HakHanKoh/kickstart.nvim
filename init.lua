@@ -244,8 +244,8 @@ vim.opt.foldenable = false
 vim.opt.foldlevel = 99
 
 -- insert new line without entering insert mode
-vim.keymap.set('n', '<CR>', 'm`o<Esc>``')
-vim.keymap.set('n', '<S-CR>', 'm`O<Esc>``')
+-- vim.keymap.set('n', '<S-CR>', 'm`o<Esc>``')
+vim.keymap.set('n', '<CR>', 'o<Esc>')
 
 -- copy current file's relative path into clipboard
 vim.api.nvim_create_user_command('Cppath', function()
