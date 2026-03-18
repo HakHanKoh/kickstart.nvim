@@ -269,9 +269,13 @@ vim.api.nvim_create_user_command('GitAdd', function()
 end, {})
 
 -- leader keymaps
-vim.keymap.set('n', '<leader>tn', '<cmd>tabnew<CR>', { desc = '[n]ew tab' })
+vim.keymap.set('n', '<leader>tn', '<cmd>tabnew<CR><cmd>Telescope find_files<CR>', { desc = '[n]ew tab' })
 vim.keymap.set('n', '<leader>tt', '<cmd>terminal<CR>i', { desc = '[t]erminal' })
+vim.keymap.set('n', '<leader>rl', '<cmd>LspRestart<CR>', { desc = 'Restart Lsp' })
 vim.keymap.set('n', '<leader>ga', '<cmd>GitAdd<CR>', { desc = 'Add file to git staging' })
+vim.keymap.set('n', '<leader>gs', 'igit status<CR><C-\\><C-n>', { desc = 'Git Status' })
+vim.keymap.set('n', '<leader>gc', 'igit commit -m ""<left>', { desc = 'Git Commit' })
+vim.keymap.set('n', '<leader>gm', 'igit commit --amend --no-edit', { desc = 'Git amend commit' })
 
 -- CTRL-s to save file
 vim.keymap.set('i', '<C-s>', '<C-\\><C-n>:w<CR>', { desc = 'Save file' })
