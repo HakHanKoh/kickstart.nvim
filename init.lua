@@ -276,6 +276,7 @@ vim.keymap.set('n', '<leader>ga', '<cmd>GitAdd<CR>', { desc = 'Add file to git s
 vim.keymap.set('n', '<leader>gs', 'igit status<CR><C-\\><C-n>', { desc = 'Git Status' })
 vim.keymap.set('n', '<leader>gc', 'igit commit -m ""<left>', { desc = 'Git Commit' })
 vim.keymap.set('n', '<leader>gm', 'igit commit --amend --no-edit', { desc = 'Git amend commit' })
+vim.keymap.set('n', '<leader>j', '<cmd>%! python -m json.tool<CR>', { desc = 'Format JSON' })
 
 -- CTRL-s to save file
 vim.keymap.set('i', '<C-s>', '<C-\\><C-n>:w<CR>', { desc = 'Save file' })
